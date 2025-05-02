@@ -7,10 +7,11 @@ import './Login.css';
 // Carousel Component
 const Carousel = () => {
   const images = [
-    '/images/carousel1.jpg',
-    '/images/carousel2.jpg',
-    '/images/carousel3.jpg',
+    `${process.env.PUBLIC_URL}/images/carousel1.jpg`,
+    `${process.env.PUBLIC_URL}/images/carousel2.jpg`,
+    `${process.env.PUBLIC_URL}/images/carousel3.jpg`,
   ];
+  
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
