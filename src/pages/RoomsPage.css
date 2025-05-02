@@ -1,0 +1,159 @@
+/* Overall container */
+.rooms-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Filter container layout */
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content:flex-start ;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Slider and range display styling */
+.filter-container input[type="range"] {
+  width: 200px; /* Ensures the slider takes the full width of the container */
+  margin: 0 10px; /* Retaining your existing margin */
+  padding: 0;
+}
+
+
+
+.filter-container .price-range-display {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Grid layout for cards */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Room card */
+.room-card {
+  position: relative;
+  width: 85%;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.room-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* When clicked, flip the card */
+.room-card.flipped .room-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back sides */
+.room-card-front,
+.room-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  text-align: center;
+}
+
+.room-card-front {
+  background-color: #fff;
+}
+
+.room-card-back {
+  background-color: #ffffff;
+  color: #000000;
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+/* Image and text on the front */
+.room-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.room-name {
+  background-color: rgba(155, 148, 148, 0.6); /* Semi-transparent background */
+  border-radius: 5px;
+  position: absolute; /* Position it inside the card */
+  top: 40%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  color: #000000; /* Text color */
+  font-size: 20px; /* Adjust size for better scalability */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  z-index: 5; /* Ensure it stays above other elements */
+  text-align: center;
+  padding: 10px 20px; /* Add padding for better readability */
+  max-width: 80%; /* Prevent it from overflowing the container */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis (...) for long text */
+}
+
+
+
+/* Price styling - Positioned at the top-left corner of the card, right at the edge */
+.room-price {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #f9f9f9;
+  padding: 0.5rem 0.8rem 0.6rem;
+  border-top-left-radius: 1rem;
+  font-size: 12px;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+
+/* Description text on the back */
+.room-description {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.book-now-btn {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.book-now-btn:hover {
+  color: #0056b3;
+}
+
+.room-booking-text {
+  color: #5b5b5bcd;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
